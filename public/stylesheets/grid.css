@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* 布局 */
+
+/*header*/
+.g-aside{
+	height:100%;
+	border-right:3px solid #CCC;
+	position:fixed;
+	display:block;
+	z-index: 999;
+}
+.g-aside-close{
+	width:400px;
+}
+.g-aside-open{
+	width:100%;
+}
+/*main*/
+.g-main{
+	height:100%;
+	margin-left:403px;
+}
+	/*project*/
+
+
+

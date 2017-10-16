@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* 元件 */
+.u-profile{
+	height:0px;
+	margin:12px auto;
+	color:rgb(255,255,255,.25);
+}
+.u-social{
+	margin:1px 0 5px 0;
+	display:inline-block;
+	letter-spacing:1px;
+}
+.u-socialf{
+	color:#f8f8f8;
+	font-size:1.25em;
+}
+.u-search{
+	width:250px;
+	height:55px;
+	padding:0 0 0 30px;
+	border-radius:1.68rem;
+	margin:11px auto;
+	font-size:1em;
+}
+.u-search:focus{
+	border:#ea6153 1px solid;
+}
+/*main*/
+.u-caret:hover{
+	padding:10px 0px 0px 20px;
+	color:#ea6153;
+	font-size:1.5em;
+}
+	/*project*/

@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html class="bg-dark">
+<head>
+<meta charset="utf-8" />
+<title>EastCity小站-后台管理系统</title>
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="/stylesheets/app.v2.css" type="text/css" />
+<!--[if lt IE 9]> <script src="js/ie/html5shiv.js" cache="false"></script> <script src="js/ie/respond.min.js" cache="false"></script> <script src="js/ie/excanvas.js" cache="false"></script> <![endif]-->
+</head>
+<body style="overflow-y:hidden;">
+	<section id="content" class="m-t-lg wrapper-md animated fadeInUp">
+		<div class="container aside-xxl" style="margin-top:70px;">
+			<section class="panel panel-default bg-white m-t-lg">
+				<header class="panel-heading text-center" style="padding:10px 10px; height:40px;">
+					<span style="font-size:18px;line-height:18px;">EastCity小站后台管理系统</span>
+				</header>
+				<% if (locals.error) { %> 
+		        <div id="alt_warning" class="alert alert-warning"> 
+		          <%= error %> 
+		        </div> 
+		      <% } %> 
+				<form class="panel-body wrapper-lg" method="post">
+					<div class="form-group" style="padding: 10px 10px 0px 10px;">
+						<input type="text" name="username" id="id_username" placeholder="请输入用户名"
+							class="form-control input-lg" required autofocus>
+					</div>
+					<div class="form-group" style="padding: 0px 10px 0px 10px;">
+						<input type="password" id="inputPassword" name="password"
+							placeholder="请输入密码" class="form-control input-lg" required>
+					</div>
+					<div class="form-group" style="padding: 0px 10px 0px 10px;">
+						<input name="chbRem" id="chbRem" type="checkbox" value="记住密码"> 记住密码
+					</div>
+					<div class="form-group" style="padding: 0px 10px 0px 10px;">
+					<button type="submit" class="btn btn-primary"
+						style="width:100%;">登录</button>
+					</div>
+				</form>
+			</section>
+		</div>
+	</section>
+	<!-- footer -->
+	<footer id="footer">
+		<div class="text-center padder">
+			<p>
+				<small>EastCity小站 &copy; 2017</small>
+			</p>
+		</div>
+	</footer>
+<% include footer.html %>
