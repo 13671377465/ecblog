@@ -1,2 +1,1 @@
-Git is a version control system.
-Git is free software.
+使用Express+ejs+mysql搭建简易博客系统
