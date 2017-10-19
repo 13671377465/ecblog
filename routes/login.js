@@ -32,7 +32,7 @@ router.post('/', function(req, res) {
              }
              res.locals.username = userName
              req.session.username = res.locals.username                   
-             res.redirect('/')
+             res.redirect('/index')
              return
         }     
     })           

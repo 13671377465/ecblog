@@ -1,0 +1,29 @@
+<% include mainheader.html %>
+<!--主体部分-->
+<div class="g-main">
+	<div class="m-hd f-csd">
+		<h1>PROJECTS</h1>
+    </div>
+    <div id="id_gallery">
+        <ul class="m-projectmain f-tac">
+        <% projects.forEach(function(projects){ %>
+            <li class="m-projectli" data-tags="<%= projects.title %>">
+                <a class="m-projectlink f-db f-pr" title="Read more about <%= projects.title %>" href="/mainpro/article?id=<%= projects.id %>" style="background-image:url(/upload/<%= projects.bgimg %>);">
+                    <div class="m-projectmark"></div>
+                    <h1 class="m-projecttitle f-fwb"><%= projects.title %></h1>
+                    <time class="m-projecttime"><%= projects.time %></time>
+                </a>
+                <div></div>
+            </li>
+        <% }) %>
+        </ul>
+    </div>
+</div>
+<!--底部-->
+<div class="g-footer">
+</div>
+
+<script src="/javascripts/jq2.1.4.js"></script>
+<script src="/javascripts/animation.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<% include mainheader.html %>
+<div class="g-main">
+	<div class="m-hd f-csd">
+		<h1>PROJECT</h1>
+    </div>
+    <% projects.forEach(function(projects){ %>  
+    <div class="m-article-title"><%= projects.title %></div>
+    <div class="m-article-time"><%= projects.time %></div>
+    <div class="m-article-text" id="preview"></div>
+    <script src="/markdown/markdown.js"></script>
+    <script>
+    	var text = "<%= projects.text %>"
+        document.getElementById('preview').innerHTML = markdown.toHTML(text)
+    </script>
+    <% }) %>
+</div>
+<!--底部-->
+<div class="g-footer">
+</div>
+
+<script src="/javascripts/jq2.1.4.js"></script>
+<script src="/javascripts/animation.js"></script>
+</body>
+</html>

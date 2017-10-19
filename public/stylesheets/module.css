@@ -221,4 +221,21 @@
 	.m-projectmark:hover{
 		background-color: rgba(25,25,25,0.10);
 	}
+	/*article*/
+	.m-article-title{
+		width: 100%;
+		margin-top: 10px;
+		text-align: center;
+		font-size: 26px;
+	}
+	.m-article-time{
+		width: 100%;
+		margin-top: 10px;
+		text-align: center;
+		font-size: 12px;
+	}
+	.m-article-text{
+		margin-top: 10px;
+		padding: 20px;
+	}
 

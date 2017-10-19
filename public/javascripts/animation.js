@@ -1,6 +1,6 @@
 (function(){
 /*aside*/
-
+	var log = console.log.bind(console)
 	var $aside=$('#id_aside');
 	var $logo=$('#id_logo');
 	var $openAside=$('#id_openAside');
@@ -41,11 +41,9 @@
 	var $lis=$('#id_gallery li');
 	var $taglist=$('#id_taglist');
 	var tagged={};
-	
 	$lis.each(function() {
         var li=this;
 		var tags=$(this).data('tags');
-		
 		if(tags){
 			tags.trim().split(',').forEach(function(tagName){
 				if(tagged[tagName]==null){
@@ -56,7 +54,6 @@
 		}
 		
     });
-	
 	$('<span/>',{
 		text:'ShOWALL',
 		id:'SHOWALL',
@@ -84,7 +81,7 @@
 		$('<span/>',{
 			text:tagName+'('+tagged[tagName].length+')',
 			class:'m-tags',
-			id:tagName,
+			id:tagName.toUpperCase(),
 			hover:function(){
 				$(this)
 				.addClass('m-tags-hover')
@@ -137,29 +134,15 @@ var sign_1=0;
 $contag.on('click',function(){
 	switch(sign_1){
 		case 0:
-			fadein();
+			$('#id_taglist span').fadeIn(300);
 			sign_1=1;
 			break;
 		case 1:
-			fadeout();	
+			$('#id_taglist span').fadeOut(300);		
 			sign_1=0;
 			break;
 	}
 });
-
-function fadeout(){
-	$('#SHOWALL').fadeOut(500);
-	$('#HTML').fadeOut(400);
-	$('#CSS').fadeOut(300);
-	$('#JAVASCRIPT').fadeOut(200);	
-}
-
-function fadein(){
-	$('#SHOWALL').fadeIn(100);
-	$('#HTML').fadeIn(300);	
-	$('#CSS').fadeIn(500);	
-	$('#JAVASCRIPT').fadeIn(700);	
-}
 
 	/*project*/
 

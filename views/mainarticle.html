@@ -1,0 +1,19 @@
+<% include mainheader.html %>
+<div class="g-main">
+	<div class="m-hd f-csd">
+		<h1>BLOG</h1>
+    </div>
+    <% blogs.forEach(function(blogs){ %>
+    <div class="m-article-title"><%= blogs.title %></div>
+    <div class="m-article-time"><%= blogs.time %></div>
+    <div class="m-article-text"><%= blogs.text %></div>
+    <% }) %>
+</div>
+<!--底部-->
+<div class="g-footer">
+</div>
+
+<script src="/javascripts/jq2.1.4.js"></script>
+<script src="/javascripts/animation.js"></script>
+</body>
+</html>

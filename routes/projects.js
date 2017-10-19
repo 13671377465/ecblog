@@ -57,7 +57,7 @@ router.get('/projectupdate', function(req, res) {
 router.post('/projectupdate', upload.single('image'), function(req, res) {
     var title = req.body['title'],
         text = req.body['text']
-    Project.prototype.projectupdate(req.file.path, title, text, req.query.id, function() {
+    Project.prototype.projectupdate(req.file.filename, title, text, req.query.id, function() {
         res.redirect('/project')
     })
 })
@@ -73,8 +73,9 @@ router.get('/projectinsert', function(req, res) {
 router.post('/projectinsert', upload.single('image'),function(req, res) {
     var title = req.body['title'],
         text = req.body['text'],
-        time = new Date()
-    Project.prototype.projectinsert(req.file.path, title, text, time, function() {
+        now = new Date()
+        time = now.getFullYear() + '-' + (now.getMonth()+1) + '-' + now.getDate()
+    Project.prototype.projectinsert(req.file.filename, title, text, time, function() {
         res.redirect('/project')
     })
 })

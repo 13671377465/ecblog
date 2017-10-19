@@ -15,6 +15,7 @@
     "express-session" : "latest",
     "mysql" : "latest",
     "ejs": "~0.8.5",
-    "multer": "latest"
+    "multer": "latest",
+    "markdown": "~0.5.0"
   }
 }

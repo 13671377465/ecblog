@@ -61,7 +61,8 @@ router.post('/bloginsert',function(req, res) {
 	var title = req.body['title'],
         tag = req.body['tag'],
         text = req.body['text'],
-        time = new Date()
+        now = new Date()
+        time = now.getFullYear() + '-' + (now.getMonth()+1) + '-' + now.getDate() 
         Blog.prototype.bloginsert(tag, title, text, time, function() {
         	res.redirect('/blog')
         })

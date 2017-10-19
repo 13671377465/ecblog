@@ -1,0 +1,32 @@
+<% include mainheader.html %>
+
+<!--主体部分-->
+<div class="g-main">
+	<div class="m-hd f-csd">
+		<h1>BLOG</h1>
+    </div>
+    <div class="m-point">
+    	<a>
+        	<i class="u-caret fa fa-caret-right" id="id_contag"></i>
+            <span class="f-dn">icon-caret-right</span>
+        </a>
+    </div>
+    <!--筛选标签-->
+    <div class="m-taglist" id="id_taglist"></div>
+    <!--文章-->
+    <div id="id_gallery">
+    	<ul class="m-blogmain">
+        <% blogs.forEach(function(blogs){ %>
+        	<li class="m-blogli" data-tags="<%= blogs.tag %>"><a href="/article?id=<%= blogs.id %>"><%= blogs.title %></a><span class="m-blogtime f-csd"><%= blogs.time %></span></li>
+        <% }) %>
+        </ul>
+    </div>
+</div>
+<!--底部-->
+<div class="g-footer">
+</div>
+
+<script src="/javascripts/jq2.1.4.js"></script>
+<script src="/javascripts/animation.js"></script>
+</body>
+</html>
