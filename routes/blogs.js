@@ -2,7 +2,8 @@ var express = require('express'),
     router = express.Router(),
     Blog = require('../modules/blog.js'),
     crypto = require('crypto'),
-    util = require('../util/util')
+    util = require('../util/util'),
+    markdown = require( "markdown" ).markdown
 
 router.get('/', function(req, res) {
     util.checkLogin(req, res, function(req, res) {
@@ -43,7 +44,7 @@ router.get('/blogupdate', function(req, res) {
 router.post('/blogupdate',function(req, res) {
 	var title = req.body['title'],
         tag = req.body['tag'],
-        text = req.body['text']
+        text = markdown.toHTML(req.body['text'])
         Blog.prototype.blogupdate(tag, title, text, req.query.id, function() {
         	res.redirect('/blog')
         })
@@ -60,8 +61,8 @@ router.get('/bloginsert', function(req, res) {
 router.post('/bloginsert',function(req, res) {
 	var title = req.body['title'],
         tag = req.body['tag'],
-        text = req.body['text'],
-        now = new Date()
+        text = markdown.toHTML(req.body['text']),
+        now = new Date(),
         time = now.getFullYear() + '-' + (now.getMonth()+1) + '-' + now.getDate() 
         Blog.prototype.bloginsert(tag, title, text, time, function() {
         	res.redirect('/blog')

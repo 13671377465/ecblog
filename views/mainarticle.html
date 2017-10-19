@@ -6,7 +6,7 @@
     <% blogs.forEach(function(blogs){ %>
     <div class="m-article-title"><%= blogs.title %></div>
     <div class="m-article-time"><%= blogs.time %></div>
-    <div class="m-article-text"><%= blogs.text %></div>
+    <div class="m-article-text"><%- blogs.text %></div>
     <% }) %>
 </div>
 <!--底部-->

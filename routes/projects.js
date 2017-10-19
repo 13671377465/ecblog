@@ -4,7 +4,8 @@ var express = require('express'),
     crypto = require('crypto'),
     util = require('../util/util'),
     fs = require('fs'),
-    multer = require('multer')
+    multer = require('multer'),
+    markdown = require( "markdown" ).markdown
 var storage = multer.diskStorage({
       destination: function (req, file, cb) {
             cb(null, './public/upload')
@@ -56,7 +57,7 @@ router.get('/projectupdate', function(req, res) {
 
 router.post('/projectupdate', upload.single('image'), function(req, res) {
     var title = req.body['title'],
-        text = req.body['text']
+        text = markdown.toHTML(req.body['text'])
     Project.prototype.projectupdate(req.file.filename, title, text, req.query.id, function() {
         res.redirect('/project')
     })
@@ -72,8 +73,8 @@ router.get('/projectinsert', function(req, res) {
 
 router.post('/projectinsert', upload.single('image'),function(req, res) {
     var title = req.body['title'],
-        text = req.body['text'],
-        now = new Date()
+        text = markdown.toHTML(req.body['text']),
+        now = new Date(),
         time = now.getFullYear() + '-' + (now.getMonth()+1) + '-' + now.getDate()
     Project.prototype.projectinsert(req.file.filename, title, text, time, function() {
         res.redirect('/project')

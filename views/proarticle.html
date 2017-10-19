@@ -6,12 +6,7 @@
     <% projects.forEach(function(projects){ %>  
     <div class="m-article-title"><%= projects.title %></div>
     <div class="m-article-time"><%= projects.time %></div>
-    <div class="m-article-text" id="preview"></div>
-    <script src="/markdown/markdown.js"></script>
-    <script>
-    	var text = "<%= projects.text %>"
-        document.getElementById('preview').innerHTML = markdown.toHTML(text)
-    </script>
+    <div class="m-article-text"><%- blogs.text %></div>
     <% }) %>
 </div>
 <!--底部-->

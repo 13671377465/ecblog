@@ -2,8 +2,8 @@ var express = require('express'),
     router = express.Router(),
     Blog = require('../modules/blog.js'),
     crypto = require('crypto'),
-    util = require('../util/util'),
-    markdown = require( "markdown" ).markdown
+    util = require('../util/util')
+    
 
 router.get('/', function(req, res) {
     Blog.prototype.blogseleteall(function(blogs) {
