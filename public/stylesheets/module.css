@@ -33,7 +33,7 @@
 	-moz-user-select:none;
 }
 .m-content-open{
-	margin:10px 450px;
+	margin:10px 25%;
 }
 .m-content-close{
 	margin:10px 2em;
@@ -223,12 +223,12 @@
 	}
 	.m-footer-p{
 		display: block;
-		padding-top: 5px;
-		padding-left: 180px;
-		font-size: 24px;
+		text-align: center;
+		font-size: 20px;
 		color: #666;
 	}
 	.m-footer-p a{
 		color: #ea6153;
+		text-decoration: underline;;
 	}
 
